@@ -6,11 +6,17 @@
 var app = {
     // Application Constructor
     initialize: function () {
- register.addEventListener('click', function ()
-        {
-
-            alert("Button Clicked");
-         });
-    }
+//form.onsubmit(this.foo.bind(this),false);
+    },
+     onDeviceReady: function () {
+    
+    
+     },
+     foo:function(register)
+     {
+       var username = document.getElementById("fname").value;
+        var username = document.getElementById("username_edit").value;
+         
+},
 }
 app.initialize();

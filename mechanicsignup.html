@@ -16,7 +16,7 @@ and open the template in the editor.
     </head>
     <body>
 
-      <form action="index.html" method="post">
+        <form id="form" onsubmit="app.foo('register')">
       
         <h1>Sign Up</h1>
         
@@ -47,10 +47,10 @@ and open the template in the editor.
           <label>Vehicle type:</label>
           <input type="checkbox" id="2tyre" value="2tyre" name="2tyre"><label class="light"  >2 Tyre</label><br>
             <input type="checkbox" id="4tyre" value="4tyre" name="4tyre"><label class="light" >4 Tyre</label><br>
-          <input type="checkbox" id="heavy" value="heavy" name="heavy"><label class="light" >Heavy Vehicle</label>
+            <input type="checkbox" id="heavy" value="heavy" name="heavy"><label class="light" >Heavy Vehicle</label><br>
          <input type="checkbox" id="all" value="all" name="all"><label class="light" >All Vehicle</label>
         </fieldset>
-        <button type="button" id="register">Sign Up</button>
+        <button type="submit" id="register" >Sign Up</button>
       </form>
         <script type="text/javascript" src="js/mechanicsignup.js"></script>
    
