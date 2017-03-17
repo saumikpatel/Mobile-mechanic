@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+     <link rel="stylesheet" href="css/mechanicsignup.css">
+        <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </head>
+    <body>
+
+      <form action="index.html" method="post">
+      
+        <h1>Sign Up</h1>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+          <label for="name"> First Name:</label>
+          <input type="text" id="fname" name="fname" required="required">
+          
+          <label for="mail">Last Name:</label>
+          <input type="text" id="lname" name="lmail" required="required">
+          
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required="required">
+          
+          <label for="cnumber">Contact Number:</label>
+          <input type="number" id="number" name="number" required="required">
+          
+        </fieldset>
+        
+        <fieldset>
+          <legend><span class="number">2</span>Your profile</legend>
+          <label for="bio">Address:</label>
+          <textarea id="address" name="address" required="required"></textarea>
+        </fieldset>
+        <fieldset>
+       
+        
+          <label>Vehicle type:</label>
+          <input type="checkbox" id="2tyre" value="2tyre" name="2tyre"><label class="light"  >2 Tyre</label><br>
+            <input type="checkbox" id="4tyre" value="4tyre" name="4tyre"><label class="light" >4 Tyre</label><br>
+          <input type="checkbox" id="heavy" value="heavy" name="heavy"><label class="light" >Heavy Vehicle</label>
+         <input type="checkbox" id="all" value="all" name="all"><label class="light" >All Vehicle</label>
+        </fieldset>
+        <button type="button" id="register">Sign Up</button>
+      </form>
+        <script type="text/javascript" src="js/mechanicsignup.js"></script>
+   
+    </body>
+</html>
+
