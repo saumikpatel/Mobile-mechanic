@@ -7,16 +7,20 @@ var app = {
     // Application Constructor
     initialize: function () {
 //form.onsubmit(this.foo.bind(this),false);
+ //window.location.href = "mechanicallocation.html";
+ 
     },
+        foo:function(register)
+     {
+       var username = document.getElementById("fname").value;
+        alert(username);
+         localStorage.setItem("name",username);
+      window.location.href = "mechanicallocation.html";
+},
      onDeviceReady: function () {
     
     
      },
-     foo:function(register)
-     {
-       var username = document.getElementById("fname").value;
-        var username = document.getElementById("username_edit").value;
-         
-},
+ 
 }
 app.initialize();
