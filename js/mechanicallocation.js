@@ -1,6 +1,17 @@
 // https://maps.googleapis.com/maps/api/geocode/json?address=Winnetka&key=AIzaSyCDcA1Z5_0IfX6XYz7f5nI0rVs7S136DIY
 
-
+fname = localStorage.getItem('fname');
+lname = localStorage.getItem('lname');
+address = localStorage.getItem('address');
+number = localStorage.getItem('number');
+email = localStorage.getItem('email');
+password = localStorage.getItem('cpassword');
+shopname = localStorage.getItem('shopname');
+servicetype = localStorage.getItem('servicetype');
+vehicletype = localStorage.getItem('vehicletype');
+// alert(a);
+var slat, slng;
+var tester = 0;
 var pos;
 var mapDiv = document.getElementById('map');
 function initMap() {
@@ -27,14 +38,10 @@ function initMap() {
         draggable: true,
         anchorPoint: new google.maps.Point(0, -29)
     });
-    google.maps.event.addListener(marker, 'drag', function () {
-        document.getElementById('lat').value = marker.position.lat();
-        document.getElementById('lng').value = marker.position.lng();
-
-    });
+    
     autocomplete.addListener('place_changed', function () {
         infowindow.close();
-      //  marker.setVisible(false);
+        //  marker.setVisible(false);
         var place = autocomplete.getPlace();
         if (!place.geometry) {
             window.alert("Autocomplete's returned place contains no geometry");
@@ -43,7 +50,7 @@ function initMap() {
 
         // If the place has a geometry, then present it on a map.
         if (place.geometry.viewport) {
-               var map = new google.maps.Map(document.getElementById('map'), {
+            var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 18,
                 draggable: true,
                 panControl: false,
@@ -54,27 +61,39 @@ function initMap() {
                 mapTypeControl: false,
 
             });
-			
+
             map.fitBounds(place.geometry.viewport);
             map.setZoom(18);
             map.setCenter(place.geometry.location);
-			 var marker = new google.maps.Marker(
+            var marker = new google.maps.Marker(
                 {
                     position: place.geometry.location,
                     map: map,
-					draggable:true
-				
+                    draggable: true
+                    
                 });
-				google.maps.event.addListener(marker, 'drag', function () {
-        document.getElementById('lat').value = marker.position.lat();
-        document.getElementById('lng').value = marker.position.lng();
-
-    });
+                slat = place.geometry.location.lat();
+                slng = place.geometry.location.lng();
+                localStorage.setItem("Latitude", slat);
+                localStorage.setItem("Longitude", slng);
+                console.log(localStorage.getItem('Latitude'));
+                console.log(localStorage.getItem('Longitude'));
+                tester = 1;
+ 
+            google.maps.event.addListener(marker, 'drag', function () {
+                slat = marker.position.lat();
+                slng = marker.position.lng();
+                localStorage.setItem("Latitude", slat);
+                localStorage.setItem("Longitude", slng);
+                console.log(localStorage.getItem('Latitude'));
+                console.log(localStorage.getItem('Longitude'));
+                tester = 1;
+            });
         } else {
             map.setCenter(place.geometry.location);
             map.setZoom(18);
         }
-      
+
 
         marker.setPosition(place.geometry.location);
         marker.setVisible(true);
@@ -105,6 +124,13 @@ function initMap() {
 document.getElementById('currentLocation').addEventListener('click', function () {
     test(map);
 });
+document.getElementById('nextOtp').addEventListener('click',function(){
+    if(tester == 1){
+        window.location.href = "otpConfirmation.html";
+    }else{
+        alert("Please select your location!");
+    }
+})
 //google.maps.event.addDomListener(window, 'load', init);
 function test(map1) {
     if (navigator.geolocation) {
@@ -114,7 +140,7 @@ function test(map1) {
                 lng: position.coords.longitude
             };
             var myLatlng = new google.maps.LatLng(pos.lat, pos.lng);
-            alert(myLatlng);
+            //alert(myLatlng);
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 18,
                 draggable: true,
@@ -133,11 +159,18 @@ function test(map1) {
                     position: myLatlng,
                     map: map
                 });
-
-
+            slat = pos.lat;
+            slng = pos.lng;
+            localStorage.setItem("Latitude", slat);
+            localStorage.setItem("Longitude", slng);
+            console.log(localStorage.getItem('Latitude'));
+            console.log(localStorage.getItem('Longitude'));
+            tester = 1;
         });
     }
 }
+
+
 
 
 
