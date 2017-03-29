@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/enteremail.js"></script>
+    <script type="text/javascript" src="js/otp.js"></script>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"></link>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .bar {
+            font-size: 40px;
+            font-weight: bold;
+        }
+        
+        .spacer {
+            padding-top: 10px;
+            text-align: center;
+            width: 100%;
+            height: 100px;
+        }
+        
+        .show {
+            display: block;
+        }
+        
+        .hide {
+            display: none;
+        }
+    </style>
+
+
+</head>
+
+<body class="#fafafa grey lighten-5">
+    <div class="bar #4db6ac teal lighten-2 center-align #fafafa-text grey-text text-lighten-5">
+        OTP
+    </div>
+    <div class="spacer #e57373-text red-text text-lighten-2">
+        Error
+    </div>
+    <form id="form">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="email" type="email" name="data" required="required">
+                <label for="email">Email</label>
+            </div>
+            <div class="center-align">
+                <input type="button" id="botp" class="waves-effect waves-light btn" value="send otp" style="text-align: center;">
+            </div>
+    </form>
+    <form id="form2"  class="show">
+        <div class="input-field col s12">
+            <input id="otp" type="text" name="otp" required="required">
+            <label for="otp">OTP</label>
+        </div>
+
+        <div class="center-align">
+            <button class="btn waves-effect waves-light" type="button" name="register" id="next">Submit
+            <i class="material-icons right">send</i>
+            </button>
+        </div>
+
+    </form>
+
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>

@@ -42,10 +42,10 @@ var app = {
             if (x == "user")
             {
                 alert('yes');
-                window.location.href = "usersignup.html";
+                window.location.href = "userenteremail.html";
             } else if(x=="mechanic")
             {
-                window.location.href = "mechanicsignup.html";
+                window.location.href = "mechanicalenteremail.html";
             }
             else{
                   window.location.href = "index.html";
@@ -71,11 +71,11 @@ var app = {
                     alert(x);
                 }
             }
-            if (y == "user")
+            if (x === "user")
             {
                 alert('yes');
                 window.location.href = "userlogin.html";
-            } else if(y=="mechanic")
+            } else if(x=="mechanic")
             {
                 window.location.href = "mechaniclogin.html";
             }
