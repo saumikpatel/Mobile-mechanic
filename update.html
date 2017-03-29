@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script type="text/javascript" src="js/jquery.js"></script>
+ 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('select').material_select();
+    });
+  </script>
+
+  </style>
+  <script type="text/javascript">
+ 
+
+
+
+    $(document).ready(function () {
+
+
+
+      $("#register").click(function () {
+        var fname = document.getElementById('fname').value;
+        var lname = document.getElementById('lname').value;
+        var contact = document.getElementById('contact').value;
+       
+        var address = document.getElementById('address').value;
+        var servicetype = document.getElementById('servicetype').value;
+        var check = document.getElementsByName('type');
+        var sname = document.getElementById('sname').value;
+        var opentime = document.getElementById('opentime').value;
+        var closetime = document.getElementById('closetime').value;
+        var tcontact = document.getElementById('tcontact').value;
+        alert(opentime);
+        y = '';
+        for (i = 0; i < check.length; i++) {
+          if (check[i].checked) {
+            y += check[i].value + ",";
+          }
+        }
+
+        if(fname==""||lname==""||contact==""||address==""||servicetype==""||sname==""||y=="")
+        {
+          document.getElementById('error').innerHTML="Please fill the entire form";
+        }
+        else if(contact.length!=10){
+       document.getElementById('error').innerHTML="Please enter valid contact";
+        }
+        else{
+        localStorage.setItem('fname',fname);
+        localStorage.setItem('lname',lname);
+        localStorage.setItem('contact',contact);
+        localStorage.setItem('address',address);
+        localStorage.setItem('servicetype',servicetype);
+        localStorage.setItem('sname',sname);
+        localStorage.setItem('y',y);
+        localStorage.setItem('tcontact',tcontact);
+        localStorage.setItem('opentime',opentime);
+        localStorage.setItem('closetime',closetime);
+
+
+        window.location.href="umap.html";
+  }    });
+    });
+  </script>
+
+
+  <style>
+    .bar {
+      font-size: 40px;
+      font-weight: bold;
+    }
+    
+    .myform {
+      padding: 5%;
+    }
+    .spacer{
+      margin-top: -20px;
+      text-align: right;
+      width: 100%;
+      }
+  </style>
+
+  <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"></link>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body class="#fafafa grey lighten-5">
+  <div class="bar #4db6ac teal lighten-2 center-align #fafafa-text grey-text text-lighten-5">
+    ADD SHOP
+  </div>
+
+  <form class="myform z-depth-5">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input type="text" name="fname" class="validate" id="fname" required>
+        <label for="fname">FIRST NAME</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input type="text" name="lname" id="lname" class="validate" required>
+        <label for="lname">LAST NAME</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">contacts</i>
+        <input type="tel" name="contact" id="contact"  required>
+        <label for="contact">CONTACT NUMBER</label>
+      </div>
+      <div class="spacer col s12 #e57373-text red-text text-lighten-2">
+        
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">store</i>
+        <input id="sname" name="sname" type="text" class="validate" required>
+        <label for="sname">SHOP NAME</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">location_on</i>
+        <textarea id="address" name="address" class="materialize-textarea" required></textarea>
+        <label for="address">ADDRESS</label>
+      </div>
+
+      <div class="input-field col s12">
+        <textarea placeholder="Enter service type separated by commas" id="servicetype" name="servicetype" class="materialize-textarea" required></textarea>
+        <label for="servicetype">SERVICE TYPE</label>
+      </div>
+      <div class="col s12">
+        <label>VECHICLE TYPE:</label>
+        <ul>
+          <li> <input type="checkbox" id="2tyre" value="2tyre" name="type"><label for="2tyre">2Tyre</label><br></li>
+          <li> <input type="checkbox" id="3tyre" value="3tyre" name="type"><label for="3tyre">3Tyre</label></li>
+          <li> <input type="checkbox" id="4tyre" value="4tyre" name="type"><label for="4tyre">4Tyre</label><br></li>
+          <li> <input type="checkbox" id="heavy" value="heavy" name="type"><label for="heavy">heavy</label><br></li>
+        </ul>
+      </div>
+      <div class="spacer col s12 #e57373-text red-text text-lighten-2" id="error">
+        
+      </div>
+       <div class="input-field col s12">
+        <i class="material-icons prefix">contacts</i>
+        <input type="tel" name="tcontact" id="tcontact"  required>
+        <label for="tcontact">CONTACT NUMBER OF NEARBY TOWING SERVICES</label>
+      </div>
+
+      Select opening time of Shop:
+        <input type="number" name="opentime" id="opentime" min="1" max="24">
+
+      Select closing time of Shop:
+        <input type="number" name="closetime" id="closetime" min="1" max="24">
+          
+        
+      <div class="col s12 center-align">
+        <button class="btn waves-effect waves-light" type="button" name="register" id="register">Submit
+    <i class="material-i cons right">send</i>
+      </button>
+      </div>
+    </div>
+  </form>
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js" media="screen,projection"></script>
+</body>
+
+</html>

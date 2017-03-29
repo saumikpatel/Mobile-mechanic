@@ -77,7 +77,7 @@ var app = {
                 window.location.href = "userlogin.html";
             } else if(x=="mechanic")
             {
-                window.location.href = "mechaniclogin.html";
+                window.location.href = "mlogin.html";
             }
             else{
                  window.location.href = "index.html";
