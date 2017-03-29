@@ -34,11 +34,11 @@
           type: 'post',
           data: { email: email, password: password},//"fname="+fname+"lname="+lname+"contact="+contact+"cpassword="+cpassword,
           crossDomain: true,
-          async: true,
+          async: false,
           success: function (res) {
-
+alert(res);
             a=res;
-            if(a)
+            if(res=="true")
             {
               window.location.href="shopDiv.html";
               localStorage.setItem("mechsessionemail",email)
